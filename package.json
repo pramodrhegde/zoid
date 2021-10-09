@@ -3,6 +3,7 @@
   "version": "9.0.80",
   "description": "Cross domain components.",
   "main": "index.js",
+  "types": "./ts-types/index.d.ts",
   "scripts": {
     "setup": "npm install && npm run flow-typed",
     "demo": "serve . -l 1337",
