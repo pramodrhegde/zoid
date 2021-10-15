@@ -22,7 +22,10 @@
     "release:major": "./publish.sh major",
     "clean": "rimraf dist coverage",
     "reinstall": "rimraf flow-typed && rimraf node_modules && npm install && flow-typed install",
-    "debug": "cross-env NODE_ENV=debug"
+    "debug": "cross-env NODE_ENV=debug",
+    "flow-to-ts": "./node_modules/@khanacademy/flow-to-ts/bin/flow-to-ts.js --write ./src/**/*.js && ./node_modules/@khanacademy/flow-to-ts/bin/flow-to-ts.js --write ./src/*.js",
+    "copy": "rm -rf ./zoid-ts && cpx './src/**/*.ts' ./zoid-ts -C -L && rm -rf ./src/**/*.ts && rm -rf ./src/*.ts",
+    "ts": "tsc"
   },
   "repository": {
     "type": "git",
@@ -56,6 +59,7 @@
   ],
   "readmeFilename": "README.md",
   "devDependencies": {
+    "@khanacademy/flow-to-ts": "^0.5.2",
     "flow-bin": "0.155.0",
     "grumbler-scripts": "^3",
     "jsx-pragmatic": "^2",
